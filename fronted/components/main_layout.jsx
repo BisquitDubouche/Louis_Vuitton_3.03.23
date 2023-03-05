@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import ProductsContextProvider from "@/contexts/products_contex_provider";
+import ProductsContextProvider from "@/contexts/admin/products_context_provider";
 
 export function MainLayout({ children, title = "LOUIS VUITTON" }) {
   return (

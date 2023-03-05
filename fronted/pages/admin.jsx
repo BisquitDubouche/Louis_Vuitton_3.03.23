@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { MainLayout } from "@/components/main_layout";
-import { useProducts } from "@/contexts/products_contex_provider";
+import { useProducts } from "@/contexts/admin/products_context_provider";
+import Navbar from "@/components/navbar/Navbar";
 
 const Admin = () => {
   const { addProduct } = useProducts();
@@ -8,7 +9,7 @@ const Admin = () => {
   const [formData, setFormData] = useState({
     name: "",
     gender: "",
-    size: "",
+    size: [],
     image: "",
     price: "",
     color: "",
@@ -20,7 +21,12 @@ const Admin = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevState) => ({ ...prevState, [name]: value }));
+    if (name === "size") {
+      const sizeArray = value.split(", ");
+      setFormData((prevState) => ({ ...prevState, [name]: sizeArray }));
+    } else {
+      setFormData((prevState) => ({ ...prevState, [name]: value }));
+    }
   };
 
   const handleSubmit = (e) => {
@@ -41,7 +47,7 @@ const Admin = () => {
     if (
       !name ||
       !gender ||
-      !size ||
+      !size.length ||
       !image ||
       !price ||
       !color ||
@@ -53,17 +59,12 @@ const Admin = () => {
       alert("Please fill in all fields");
       return;
     }
-
-    if (isNaN(Number(size)) || isNaN(Number(price))) {
-      alert("Size and price should be numbers");
-      return;
-    }
     addProduct(formData);
     console.log("Product has been added");
     setFormData({
       name: "",
       gender: "",
-      size: "",
+      size: [],
       image: "",
       price: "",
       color: "",
@@ -76,6 +77,7 @@ const Admin = () => {
 
   return (
     <MainLayout title='ADMIN LV'>
+      <Navbar />
       <div>
         <form onSubmit={handleSubmit} className='form'>
           <input
@@ -95,7 +97,7 @@ const Admin = () => {
           <input
             type='text'
             name='size'
-            value={formData.size}
+            value={formData.size.join(", ")}
             onChange={handleChange}
             placeholder='size'
           />
