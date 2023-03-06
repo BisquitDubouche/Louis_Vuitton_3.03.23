@@ -1,0 +1,78 @@
+.filter-container {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  span {
+    margin: 0 60px 0;
+  }
+
+  button {
+    margin: 0 60px 0;
+    border-radius: 30px;
+    border: 1px solid;
+    width: 100px;
+    height: 40px;
+    background-color: transparent;
+    border-color: rgba(0, 0, 0, 0.402);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    img {
+      margin: 5px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.lvarchlight2collection {
+  position: relative;
+  height: 1000px;
+  img {
+    width: 100%;
+  }
+  z-index: 0;
+}
+
+.lvarchlight2collection-text {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1;
+  left: 50px;
+  bottom: 22%;
+  h1 {
+    padding-bottom: 25px;
+  }
+}
+
+.lvarchlight2collection-products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.lvarchlight2collection-card {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  flex-basis: calc(25% - 20px);
+  margin: 10px;
+  font-size: 15px;
+  width: 20%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .lvarchlight2collection-card-price {
+    padding-top: 2%;
+  }
+}
