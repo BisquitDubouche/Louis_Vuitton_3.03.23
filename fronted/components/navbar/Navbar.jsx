@@ -10,10 +10,10 @@ const Navbar = () => {
 
   return (
     <>
-      <div className='nav-container'>
-        <div className='nav-menu-search'>
+      <div className='nav-container2'>
+        <div className='nav-menu-search2'>
           <a
-            className={`burger-menu ${isSidebarOpen ? "close" : ""}`}
+            className={`burger-menu2 ${isSidebarOpen ? "close2" : ""}`}
             onClick={handleSidebarToggle}
           >
             <img
@@ -26,27 +26,27 @@ const Navbar = () => {
             />
           </a>
           <a
-            className={`menu-btn ${isSidebarOpen ? "close" : ""}`}
+            className={`menu-btn2 ${isSidebarOpen ? "close2" : ""}`}
             onClick={handleSidebarToggle}
           >
-            {isSidebarOpen ? "Close" : "Menu"}
+            {isSidebarOpen ? "Close2" : "Menu2"}
           </a>
-          <a className='search-icon-btn'>
+          <a className='search-icon-btn2'>
             <img
               src='https://static.thenounproject.com/png/1016966-200.png'
               alt='error'
             />
           </a>
-          <a className='search-btn'>Search</a>
+          <a className='search-btn2'>Search</a>
         </div>
-        <div className='nav-logo'>
+        <div className='nav-logo2'>
           <Link href={'/'}>LOUIS VUITTON</Link>
         </div>
-        <div className='nav-right-panel'>
-          <a className='wishlist-btn'>Wishlist</a>
-          <Link href={'/mylv/login'}>MyLV</Link>
+        <div className='nav-right-panel2'>
+          <a className='wishlist-btn2'>Wishlist</a>
+          <Link href={'/mylv/registration'}>MyLV</Link>
 
-          <a className='cart-icon'>
+          <a className='cart-icon2'>
             <img
               src='https://toppng.com/uploads/preview/freebag-vector-retail-shopping-cart-bag-icon-11553505193l9s1kngqvt.png'
               alt='error'
@@ -54,8 +54,9 @@ const Navbar = () => {
           </a>
         </div>
       </div>
-      <div className={`${isSidebarOpen ? "sidebar" : "sidebar-closed"}`}>
+      <div className={`${isSidebarOpen ? "sidebar2" : "sidebar-closed2"}`}>
         <Link href={'/'}>Louis Vuitton x Yayoi Kusama</Link>
+        <Link href={"/products/lvarchlight2collection"}>LV Archlight 2.0 Collection</Link>
         <Link href={'/'}>Gifts</Link>
         <Link href={'/'}>New</Link>
         <Link href={'/'}>Bags</Link>
@@ -69,12 +70,12 @@ const Navbar = () => {
         <Link href={'/'}>World of Louis Vuitton</Link>
         <Link href={'/admin'}>Admin Root</Link>
 
-        <footer className='footer'>
+        <footer className='footer2'>
           <Link href={"/"}>Sustainability</Link>
           <Link href={"/"}>Stores</Link>
           <Link href={"/"}>Ship to: United States</Link>
           <Link href={"/"}>Can we help you?</Link>
-          <Link href={"/"} className='last-child'>
+          <Link href={"/"} className='last-child2'>
             +1.866.VUITTON
           </Link>
         </footer>

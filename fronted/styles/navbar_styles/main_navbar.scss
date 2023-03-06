@@ -1,7 +1,4 @@
-* {
-  padding: 0;
-  margin: 0;
-}
+
 
 @font-face {
   font-family: "Futura-Medium";
@@ -30,7 +27,7 @@
 .burger-menu {
   height: 40%;
   width: 20%;
-  margin: 0 20px 0 30px;
+  margin: 0 20px 0 10px;
   img {
     height: 20px;
     width: 20px;
@@ -82,6 +79,7 @@
     font-size: 35px;
     font-weight: 5px;
     text-decoration: none;
+    cursor: grabbing;
   }
 }
 
@@ -92,19 +90,16 @@
   margin-left: 30%;
   a {
     list-style-type: none;
+    text-decoration: none;
     cursor: pointer;
     color: #000;
+    margin-right: 20px;
   }
   img {
     padding-top: 5px;
   }
-  .wishlist-btn {
-    margin-right: 15%;
-  }
   .cart-icon {
-    height: 40%;
-    width: 20%;
-    margin: 0 20px 0 30px;
+    margin: 0 10px 0 20px;
     img {
       height: 100%;
       width: 20px;

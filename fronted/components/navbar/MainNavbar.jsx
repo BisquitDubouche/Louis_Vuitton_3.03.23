@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 
-const Navbar = () => {
+const MainNavbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const handleSidebarToggle = () => {
@@ -44,7 +44,7 @@ const Navbar = () => {
         </div>
         <div className='nav-right-panel'>
           <a className='account-btn'>Wishlist</a>
-          <Link href={'/mylv/login'}>MyLV</Link>
+          <Link href={"/mylv/registration"}>MyLV</Link>
           <a className='cart-icon'>
             <img
               src='https://toppng.com/uploads/preview/freebag-vector-retail-shopping-cart-bag-icon-11553505193l9s1kngqvt.png'
@@ -54,19 +54,20 @@ const Navbar = () => {
         </div>
       </div>
       <div className={`${isSidebarOpen ? "sidebar" : "sidebar-closed"}`}>
-      <Link href={'/'}>Louis Vuitton x Yayoi Kusama</Link>
-        <Link href={'/'}>Gifts</Link>
-        <Link href={'/'}>New</Link>
-        <Link href={'/products/for_him/bags'}>Bags</Link>
-        <Link href={'/'}>Women</Link>
-        <Link href={'/'}>Men</Link>
-        <Link href={'/'}>Jewerly</Link>
-        <Link href={'/'}>Watches</Link>
-        <Link href={'/'}>Fragrances</Link>
-        <Link href={'/'}>Art of Living</Link>
-        <Link href={'/'}>Services</Link>
-        <Link href={'/'}>World of Louis Vuitton</Link>
-        <Link href={'/admin'}>Admin Root</Link>
+        <Link href={'/lv'}>LV Archlight 2.0 Collection</Link>
+        <Link href={"/products/lvarchlight2collection"}>Louis Vuitton x Yayoi Kusama</Link>
+        <Link href={"/"}>Gifts</Link>
+        <Link href={"/"}>New</Link>
+        <Link href={"/products/for_him/bags"}>Bags</Link>
+        <Link href={"/"}>Women</Link>
+        <Link href={"/"}>Men</Link>
+        <Link href={"/"}>Jewerly</Link>
+        <Link href={"/"}>Watches</Link>
+        <Link href={"/"}>Fragrances</Link>
+        <Link href={"/"}>Art of Living</Link>
+        <Link href={"/"}>Services</Link>
+        <Link href={"/"}>World of Louis Vuitton</Link>
+        <Link href={"/admin"}>Admin Root</Link>
 
         <footer className='footer'>
           <Link href={"/"}>Sustainability</Link>
@@ -82,4 +83,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default MainNavbar;
