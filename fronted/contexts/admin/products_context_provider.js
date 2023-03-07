@@ -1,7 +1,7 @@
 //! THIS CONTEX FOR ADMIN ROOT
 
 import axios from "axios";
-import React, { useReducer, useContext, createContext } from "react";
+import React, {useContext, createContext } from "react";
 
 export const ProductsContext = createContext();
 
