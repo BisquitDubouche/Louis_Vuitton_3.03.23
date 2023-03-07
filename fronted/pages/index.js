@@ -6,6 +6,8 @@ import ProductsContextProvider from "@/contexts/admin/products_context_provider"
 import AuthContextProvider from "../contexts/auth/auth_context_provider";
 import Footer from "@/components/footer/Footer";
 
+
+
 export default function Home() {
   return (
     <>

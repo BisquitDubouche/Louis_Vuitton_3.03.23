@@ -45,12 +45,12 @@ const MainNavbar = () => {
         <div className='nav-right-panel'>
           <a className='account-btn'>Wishlist</a>
           <Link href={"/mylv/registration"}>MyLV</Link>
-          <a className='cart-icon'>
+          <Link href={'/cart'} className='cart-icon'>
             <img
               src='https://toppng.com/uploads/preview/freebag-vector-retail-shopping-cart-bag-icon-11553505193l9s1kngqvt.png'
               alt='error'
             />
-          </a>
+          </Link>
         </div>
       </div>
       <div className={`${isSidebarOpen ? "sidebar" : "sidebar-closed"}`}>
@@ -59,8 +59,8 @@ const MainNavbar = () => {
         <Link href={"/"}>Gifts</Link>
         <Link href={"/"}>New</Link>
         <Link href={"/products/for_him/bags"}>Bags</Link>
-        <Link href={"/"}>Women</Link>
-        <Link href={"/"}>Men</Link>
+        <Link href={"/products/women"}>Women</Link>
+        <Link href={"/products/men"}>Men</Link>
         <Link href={"/"}>Jewerly</Link>
         <Link href={"/"}>Watches</Link>
         <Link href={"/"}>Fragrances</Link>

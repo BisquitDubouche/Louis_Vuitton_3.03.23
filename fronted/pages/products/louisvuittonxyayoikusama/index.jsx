@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useProductsLV } from "@/contexts/products/products_lv_contex_provider";
 import { useEffect } from "react";
 
-const lvarchlight2collection = () => {
+const louisvuittonxyayoikusama = () => {
   const {
     getCollectionProducts,
     filtered_products,
@@ -12,7 +12,7 @@ const lvarchlight2collection = () => {
     setCurrentPage,
   } = useProductsLV();
 
-  const LV = "LV Archlight 2.0 Collection";
+  const LV = "Louis Vuitton x Yayoi Kusama 2023";
 
   useEffect(() => {
     getCollectionProducts(LV);
@@ -26,12 +26,13 @@ const lvarchlight2collection = () => {
     setCurrentPage((prev) => prev + 1);
   };
 
+
   return (
-    <MainLayout title="LV Archlight 2.0 Collection">
+    <MainLayout title="Louis Vuitton x Yayoi Kusama">
       <Navbar />
 
       <div className="filter-container">
-        <span>LV Archlight 2.0 Collection</span>
+        <span>Louis Vuitton x Yayoi Kusama</span>
         <button>
           Filters
           <img
@@ -42,7 +43,7 @@ const lvarchlight2collection = () => {
       </div>
       <div className="lvarchlight2collection">
         <img
-          src="https://us.louisvuitton.com/images/is/image/HP_AU_ARCHLIGHT_ANNIVERSARY_DI3.jpg?wid=2048"
+          src="https://us.louisvuitton.com/content/dam/lv/online/high-end/unisex/collection/lady-b/U_LP_Lady_B_Drop_1_v2.html/jcr:content/assets/campaign-parker.jpg?imwidth=2048"
           alt=""
         />
         <div className="lvarchlight2collection-text">
@@ -94,4 +95,4 @@ const lvarchlight2collection = () => {
   );
 };
 
-export default lvarchlight2collection
+export default louisvuittonxyayoikusama

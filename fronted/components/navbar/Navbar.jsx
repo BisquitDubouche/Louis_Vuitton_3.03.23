@@ -3,9 +3,13 @@ import React, { useState } from "react";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
   const handleSidebarToggle = () => {
     setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const handleSearchToggle = () => {
+    setIsSearchOpen(!isSearchOpen);
   };
 
   return (
@@ -29,46 +33,53 @@ const Navbar = () => {
             className={`menu-btn2 ${isSidebarOpen ? "close2" : ""}`}
             onClick={handleSidebarToggle}
           >
-            {isSidebarOpen ? "Close2" : "Menu2"}
+            {isSidebarOpen ? "Close" : "Menu"}
           </a>
-          <a className='search-icon-btn2'>
+          <a className='search-icon-btn2' onClick={handleSearchToggle}>
             <img
               src='https://static.thenounproject.com/png/1016966-200.png'
               alt='error'
             />
           </a>
-          <a className='search-btn2'>Search</a>
+          <a className='search-btn2' onClick={handleSearchToggle}>
+            Search
+          </a>
         </div>
         <div className='nav-logo2'>
-          <Link href={'/'}>LOUIS VUITTON</Link>
+          {isSearchOpen ? (
+            <input
+              type='text'
+              placeholder='Search for products'
+              className='search'
+            />
+          ) : (
+            <Link href={"/"}>LOUIS VUITTON</Link>
+          )}
         </div>
+
         <div className='nav-right-panel2'>
           <a className='wishlist-btn2'>Wishlist</a>
-          <Link href={'/mylv/registration'}>MyLV</Link>
+          <Link href={"/mylv/registration"}>MyLV</Link>
 
-          <a className='cart-icon2'>
+          <Link href={"/cart"} className='cart-icon2'>
             <img
               src='https://toppng.com/uploads/preview/freebag-vector-retail-shopping-cart-bag-icon-11553505193l9s1kngqvt.png'
               alt='error'
             />
-          </a>
+          </Link>
         </div>
       </div>
       <div className={`${isSidebarOpen ? "sidebar2" : "sidebar-closed2"}`}>
-        <Link href={'/'}>Louis Vuitton x Yayoi Kusama</Link>
-        <Link href={"/products/lvarchlight2collection"}>LV Archlight 2.0 Collection</Link>
-        <Link href={'/'}>Gifts</Link>
-        <Link href={'/'}>New</Link>
-        <Link href={'/'}>Bags</Link>
-        <Link href={'/'}>Women</Link>
-        <Link href={'/'}>Men</Link>
-        <Link href={'/'}>Jewerly</Link>
-        <Link href={'/'}>Watches</Link>
-        <Link href={'/'}>Fragrances</Link>
-        <Link href={'/'}>Art of Living</Link>
-        <Link href={'/'}>Services</Link>
-        <Link href={'/'}>World of Louis Vuitton</Link>
-        <Link href={'/admin'}>Admin Root</Link>
+        <Link href={"/products/louisvuittonxyayoikusama"}>
+          Louis Vuitton x Yayoi Kusama
+        </Link>
+        <Link href={"/products/lvarchlight2collection"}>
+          LV Archlight 2.0 Collection
+        </Link>
+        <Link href={"/products/women/"}>Women</Link>
+        <Link href={"/products/men/"}>Men</Link>
+        <Link href={"/"}>World of Louis Vuitton</Link>
+        <Link href={"/admin"}>Admin Root</Link>
 
         <footer className='footer2'>
           <Link href={"/"}>Sustainability</Link>

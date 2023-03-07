@@ -17,7 +17,7 @@ async function getCollectionProduct(collectionName, id) {
 }
 
 export const getStaticPaths = async () => {
-  let FILTERED_PRODUCTS = await getCollectionProducts("LV Archlight 2.0 Collection");
+  let FILTERED_PRODUCTS = await getCollectionProducts("Louis Vuitton x Yayoi Kusama 2023");
   const paths = FILTERED_PRODUCTS.map((product) => {
     return {
       params: { id: product.id.toString() },
@@ -31,7 +31,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const product = await getCollectionProduct("LV Archlight 2.0 Collection", id);
+  const product = await getCollectionProduct("Louis Vuitton x Yayoi Kusama 2023", id);
 
   return {
     props: { product },
@@ -50,6 +50,4 @@ const product = ({ product }) => {
   );
 };
 
-
 export default product;
-

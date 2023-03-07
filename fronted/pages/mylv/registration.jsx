@@ -3,7 +3,7 @@ import { MainLayout } from "@/components/main_layout";
 import Link from "next/link";
 import { useAuth } from "../../contexts/auth/auth_context_provider";
 
-const registration = () => {
+const Registration = () => {
   const { registerFunc } = useAuth();
 
   const [email, setEmail] = useState("");
@@ -15,10 +15,16 @@ const registration = () => {
   const handlePasswordConfirmationChange = (e) =>
     setPasswordConfirmation(e.target.value);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    registerFunc({ email, password, passwordConfirmation });
-    setEmail(""), setPassword(""), setPasswordConfirmation("");
+    try {
+      await registerFunc(email, password, passwordConfirmation);
+      setEmail("");
+      setPassword("");
+      setPasswordConfirmation("");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -31,7 +37,7 @@ const registration = () => {
       <div className='reg-container'>
         <div className='form-container'>
           <h1>CREATE A NEW ACCOUNT</h1>
-          <form>
+          <form onSubmit={handleSubmit}>
             <span>LOGIN INFORMATION</span>
             <div>
               <label aria-required>EMAIL</label>
@@ -41,6 +47,7 @@ const registration = () => {
                 placeholder='name@expamle.com'
                 value={email}
                 onChange={handleEmailChange}
+                required
               />
               <br />
             </div>
@@ -52,6 +59,7 @@ const registration = () => {
                 placeholder='password'
                 value={password}
                 onChange={handlePasswordChange}
+                required
               />
               <br />
             </div>
@@ -63,10 +71,11 @@ const registration = () => {
                 placeholder='password'
                 value={passwordConfirmation}
                 onChange={handlePasswordConfirmationChange}
+                required
               />
               <br />
             </div>
-            <button onClick={handleSubmit}>Confirm</button>
+            <button type="submit">Confirm</button>
           </form>
         </div>
         <div>
@@ -86,4 +95,4 @@ const registration = () => {
   );
 };
 
-export default registration;
+export default Registration;

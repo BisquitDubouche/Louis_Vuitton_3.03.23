@@ -1,19 +1,24 @@
-import React, { useState } from 'react'
-import { MainLayout } from '@/components/main_layout'
-import { useAuth } from '../../contexts/auth/auth_context_provider'
+import React, { useState } from "react";
+import { MainLayout } from "@/components/main_layout";
+import { useAuth } from "../../contexts/auth/auth_context_provider";
 
 const Login = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const { loginFunc } = useAuth()
+  const { logIn } = useAuth();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
-    await loginFunc(email, password)
-  }
+    event.preventDefault();
+    try {
+      await logIn(email, password);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
-    <MainLayout title='Login in myLV account | LOUIS VUITTON'>
+    <MainLayout title="Login in myLV account | LOUIS VUITTON">
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <div>
@@ -39,8 +44,7 @@ const Login = () => {
         <button type="submit">Login</button>
       </form>
     </MainLayout>
-  )
-}
+  );
+};
 
-export default Login
-
+export default Login;
