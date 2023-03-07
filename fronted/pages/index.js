@@ -5,6 +5,8 @@ import MainNavbar from "@/components/navbar/MainNavbar";
 import ProductsContextProvider from "@/contexts/admin/products_context_provider";
 import AuthContextProvider from "../contexts/auth/auth_context_provider";
 
+
+
 export default function Home() {
   return (
     <>

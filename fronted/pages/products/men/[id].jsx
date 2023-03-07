@@ -4,21 +4,35 @@ import { useEffect } from "react";
 
 const PRODUCTS_API = "http://localhost:8000/products";
 
-async function getCollectionProducts(collectionName) {
-  const { data } = await axios(`${PRODUCTS_API}?collection=${collectionName}`);
+// async function getCollectionProducts(collectionName) {
+//   const { data } = await axios(`${PRODUCTS_API}?collection=${collectionName}`);
+//   return data;
+// }
+
+// async function getCollectionProduct(collectionName, id) {
+//   const { data } = await axios(
+//     `${PRODUCTS_API}?collection=${collectionName}&id=${id}`
+//   );
+//   return data;
+// }
+
+async function getProducts(gender) {
+  const { data } = await axios(
+    `${PRODUCTS_API}?gender=${gender}`
+  );
   return data;
 }
 
-async function getCollectionProduct(collectionName, id) {
+async function getOneProduct(gender,id) {
   const { data } = await axios(
-    `${PRODUCTS_API}?collection=${collectionName}&id=${id}`
+    `${PRODUCTS_API}?gender=${gender}&id=${id}`
   );
   return data;
 }
 
 export const getStaticPaths = async () => {
-  let FILTERED_PRODUCTS = await getCollectionProducts("LV Archlight 2.0 Collection");
-  const paths = FILTERED_PRODUCTS.map((product) => {
+  const PRODUCTS = await getProducts('Male');
+  const paths = PRODUCTS.map((product) => {
     return {
       params: { id: product.id.toString() },
     };
@@ -31,7 +45,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const product = await getCollectionProduct("LV Archlight 2.0 Collection", id);
+  const product = await getOneProduct('Male', id);
 
   return {
     props: { product },

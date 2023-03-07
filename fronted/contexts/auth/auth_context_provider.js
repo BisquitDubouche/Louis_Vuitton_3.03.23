@@ -24,7 +24,6 @@ const AuthContextProvider = ({ children }) => {
     }
   };
 
-
   const loginFunc = async (email, password) => {
     try {
       const response = await axios.post(LOG_API, {

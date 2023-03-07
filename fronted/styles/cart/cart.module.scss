@@ -1,0 +1,27 @@
+.cart_container {
+    display: flex;
+}
+.container {
+    background-color: rgba(222, 184, 135, 0.055);
+    width: 70%;
+    height: auto;
+}
+
+.head{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    a{
+        list-style: none;
+        color: black;
+    }
+}
+.product {
+    width: 40%;
+    height: auto;
+    border: 1px solid rgba(0, 0, 0, 0.191);
+    background-color: white;
+}
+.info {
+    display: flex;
+}
