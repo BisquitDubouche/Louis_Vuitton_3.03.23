@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { MainLayout } from "@/components/main_layout";
 import Link from "next/link";
+import { useAuth } from "../../contexts/auth/auth_context_provider";
 
 const registration = () => {
+  const { registerFunc } = useAuth();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
+
+  const handleEmailChange = (e) => setEmail(e.target.value);
+  const handlePasswordChange = (e) => setPassword(e.target.value);
+  const handlePasswordConfirmationChange = (e) =>
+    setPasswordConfirmation(e.target.value);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    registerFunc({ email, password, passwordConfirmation });
+    setEmail(""), setPassword(""), setPasswordConfirmation("");
+  };
+
   return (
     <MainLayout title='Create myLV account | LOUIS VUITTON'>
       <div className='nav-container-reg'>
@@ -18,28 +36,37 @@ const registration = () => {
             <div>
               <label aria-required>EMAIL</label>
               <br />
-              <input type='email' placeholder='name@expamle.com' />
-              <br />
-            </div>
-            <div>
-              <label aria-aria-required>EMAIL CONFIRMATION</label>
-              <br />
-              <input type='email' placeholder='name@expamle.com' />
+              <input
+                type='email'
+                placeholder='name@expamle.com'
+                value={email}
+                onChange={handleEmailChange}
+              />
               <br />
             </div>
             <div>
               <label>PASSWORD</label>
               <br />
-              <input type='password' placeholder='password' />
+              <input
+                type='password'
+                placeholder='password'
+                value={password}
+                onChange={handlePasswordChange}
+              />
               <br />
             </div>
             <div>
               <label>PASSWORD CONFIRMATION</label>
               <br />
-              <input type='password' placeholder='password' />
+              <input
+                type='password'
+                placeholder='password'
+                value={passwordConfirmation}
+                onChange={handlePasswordConfirmationChange}
+              />
               <br />
             </div>
-            <button>Confirm</button>
+            <button onClick={handleSubmit}>Confirm</button>
           </form>
         </div>
         <div>

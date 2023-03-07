@@ -1,0 +1,787 @@
+.footer {
+    background-color: #19110b;
+    color: #fff;
+    padding: 50px 0;
+    width: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: start;
+    // align-items: center;
+}
+
+.container1{
+    // max-width: 1200px;
+    // width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 1px solid #332b26;
+    width: 80%;
+    margin-left: 200px;
+}
+
+
+
+.footerLinks {
+    font-size: 20px;
+
+    a {
+        display: inline-block;
+        margin-right: 10px;
+        color: #fff;
+        transition: all 0.2s ease-in-out;
+        text-decoration: none;
+
+        &:hover {
+            transform: translateY(-2px);
+        }
+    }
+}
+
+// .hr{
+//     width: 75.5%;
+//     color: #19110b;
+//     margin-left: 200px;
+// }
+
+.footerText {
+    font-size: 18px;
+    text-align: start;
+    margin-left: 20px;
+    text-transform: uppercase;
+    margin-left: 235px;
+}
+
+
+
+// @keyframes fade-in {
+//     0% {
+//         opacity: 0
+//     }
+
+//     to {
+//         opacity: 1
+//     }
+// }
+
+// @keyframes fade-out {
+//     0% {
+//         opacity: 1
+//     }
+
+//     to {
+//         opacity: 0
+//     }
+// }
+
+// @keyframes spinner {
+//     0% {
+//         transform: rotate(-90deg);
+//         stroke-dashoffset: 132
+//     }
+
+//     50% {
+//         transform: rotate(270deg);
+//         stroke-dashoffset: 28
+//     }
+
+//     to {
+//         transform: rotate(630deg);
+//         stroke-dashoffset: 132
+//     }
+// }
+
+// .lv-footer-breadcrumb {
+//     display: flex;
+//     justify-content: center
+// }
+
+// [dir] .lv-footer-breadcrumb {
+//     padding-top: 2rem;
+//     padding-bottom: 2rem;
+//     background-color: #19110b
+// }
+
+// @media screen and (min-width:48rem) {
+//     .lv-footer-breadcrumb {
+//         justify-content: space-between
+//     }
+// }
+
+// .lv-footer-breadcrumb .lv-logo,
+// .lv-footer-breadcrumb .lv-smart-link {
+//     color: inherit
+// }
+
+// .lv-footer-breadcrumb .lv-logo svg {
+//     width: 9.375rem;
+//     height: 1rem
+// }
+
+// @media screen and (min-width:48rem) {
+//     .lv-footer-breadcrumb .lv-logo svg {
+//         width: 7.5rem;
+//         height: .75rem
+//     }
+// }
+
+// @media(-moz-touch-enabled:0),
+// (-webkit-hover:hover),
+// (hover:hover)and (pointer:fine) {
+//     [dir] .lv-footer-breadcrumb a.lv-smart-link:not(.lv-logo__wrap):hover {
+//         box-shadow: 0 1px 0
+//     }
+// }
+
+// .lv-footer-breadcrumb__list {
+//     display: flex;
+//     flex-flow: row wrap;
+//     justify-content: center
+// }
+
+// @media screen and (min-width:48rem) {
+//     .lv-footer-breadcrumb__list {
+//         flex-wrap: nowrap;
+//         justify-content: flex-start
+//     }
+// }
+
+// .lv-footer-breadcrumb__item {
+//     color: inherit
+// }
+
+// .lv-footer-breadcrumb__item:first-child {
+//     width: 87.2vw
+// }
+
+// [dir] .lv-footer-breadcrumb__item:first-child {
+//     text-align: center;
+//     margin-bottom: 1.5rem
+// }
+
+// @media screen and (min-width:48rem) {
+//     .lv-footer-breadcrumb__item:first-child {
+//         width: auto
+//     }
+
+//     [dir] .lv-footer-breadcrumb__item:first-child {
+//         text-align: inherit;
+//         margin-bottom: 0
+//     }
+// }
+
+// @media screen and (min-width:48rem) {
+//     [dir=ltr] .lv-footer-breadcrumb__item:nth-child(2) {
+//         margin-left: 1rem
+//     }
+
+//     [dir=rtl] .lv-footer-breadcrumb__item:nth-child(2) {
+//         margin-right: 1rem
+//     }
+// }
+
+// .lv-footer-breadcrumb__item:nth-child(n+2):after {
+//     content: "-";
+//     color: currentColor
+// }
+
+// [dir] .lv-footer-breadcrumb__item:nth-child(n+2):after {
+//     margin: 0 .5rem
+// }
+
+// .lv-footer-breadcrumb__item:last-child:after {
+//     display: none
+// }
+
+// .lv-footer-breadcrumb__action-button {
+//     color: currentColor;
+//     display: none
+// }
+
+// @media screen and (min-width:64rem) {
+//     .lv-footer-breadcrumb__action-button {
+//         display: block
+//     }
+// }
+
+// .lv-footer-breadcrumb.-new {
+//     font-weight: 400
+// }
+
+// @media screen and (min-width:48rem) {
+//     .lv-footer-breadcrumb.-new {
+//         justify-content: center
+//     }
+
+//     [dir] .lv-footer-breadcrumb.-new {
+//         border-bottom: none
+//     }
+// }
+
+// @media screen and (min-width:64rem) {
+//     .lv-footer-breadcrumb.-new {
+//         justify-content: space-between
+//     }
+
+//     [dir] .lv-footer-breadcrumb.-new {
+//         border-bottom: 1px solid #eae8e4
+//     }
+// }
+
+// .lv-footer-breadcrumb.-new .lv-logo svg {
+//     width: 9.625rem;
+//     height: 1rem
+// }
+
+// @media screen and (min-width:48rem) {
+//     .lv-footer-breadcrumb.-new .lv-footer-breadcrumb__list {
+//         flex-flow: row wrap;
+//         justify-content: center
+//     }
+// }
+
+// @media screen and (min-width:64rem) {
+//     .lv-footer-breadcrumb.-new .lv-footer-breadcrumb__list {
+//         flex-wrap: nowrap;
+//         justify-content: flex-start
+//     }
+// }
+
+// @media screen and (min-width:48rem) {
+//     .lv-footer-breadcrumb.-new .lv-footer-breadcrumb__item:first-child {
+//         width: 93.75vw
+//     }
+
+//     [dir] .lv-footer-breadcrumb.-new .lv-footer-breadcrumb__item:first-child {
+//         text-align: center;
+//         margin-bottom: 1.5rem
+//     }
+// }
+
+// @media screen and (min-width:64rem) {
+//     .lv-footer-breadcrumb.-new .lv-footer-breadcrumb__item:first-child {
+//         width: auto
+//     }
+
+//     [dir] .lv-footer-breadcrumb.-new .lv-footer-breadcrumb__item:first-child {
+//         text-align: inherit;
+//         margin-bottom: 0
+//     }
+// }
+
+// @media screen and (min-width:64rem) {
+//     .lv-footer-breadcrumb.-new .lv-footer-breadcrumb__item:nth-child(n+1):after {
+//         content: "-"
+//     }
+
+//     [dir] .lv-footer-breadcrumb.-new .lv-footer-breadcrumb__item:nth-child(n+1):after {
+//         margin: 0 .5rem
+//     }
+
+//     [dir=ltr] .lv-footer-breadcrumb.-new .lv-footer-breadcrumb__item:nth-child(2) {
+//         margin-left: 0
+//     }
+
+//     [dir=rtl] .lv-footer-breadcrumb.-new .lv-footer-breadcrumb__item:nth-child(2) {
+//         margin-right: 0
+//     }
+// }
+
+// [dir] .lv-footer-breadcrumb.-new.-is-empty {
+//     padding: 0;
+//     border-bottom: 0
+// }
+
+// @keyframes fade-in {
+//     0% {
+//         opacity: 0
+//     }
+
+//     to {
+//         opacity: 1
+//     }
+// }
+
+// @keyframes fade-out {
+//     0% {
+//         opacity: 1
+//     }
+
+//     to {
+//         opacity: 0
+//     }
+// }
+
+// @keyframes spinner {
+//     0% {
+//         transform: rotate(-90deg);
+//         stroke-dashoffset: 132
+//     }
+
+//     50% {
+//         transform: rotate(270deg);
+//         stroke-dashoffset: 28
+//     }
+
+//     to {
+//         transform: rotate(630deg);
+//         stroke-dashoffset: 132
+//     }
+// }
+
+// .lv-footer-navigation {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: stretch;
+//     font-size: 1rem;
+//     letter-spacing: .025rem;
+//     line-height: 1.25rem;
+//     font-weight: 400;
+//     color: #fff
+// }
+
+// [dir] .lv-footer-navigation {
+//     background: #19110b
+// }
+
+// .lv-footer-navigation:lang(ko),
+// .lv-footer-navigation:lang(zh) {
+//     font-size: .9rem
+// }
+
+// .lv-footer-navigation:lang(ja) {
+//     font-size: .8rem
+// }
+
+// .lv-footer-navigation:lang(ja),
+// .lv-footer-navigation:lang(ko),
+// .lv-footer-navigation:lang(th),
+// .lv-footer-navigation:lang(zh) {
+//     letter-spacing: 0;
+//     line-height: normal;
+//     font-style: normal
+// }
+
+// .lv-footer-navigation:lang(th) {
+//     word-break: break-word
+// }
+
+// .lv-footer-navigation:lang(vi) {
+//     line-height: 1.3
+// }
+
+// .lv-footer-navigation>ul {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//     align-items: center;
+//     flex: 1 1 auto
+// }
+
+// [dir] .lv-footer-navigation>ul {
+//     text-align: center;
+//     padding: 1rem 0
+// }
+
+// @media screen and (min-width:48rem) {
+//     .lv-footer-navigation>ul {
+//         justify-content: flex-start
+//     }
+
+//     [dir] .lv-footer-navigation>ul {
+//         padding: 2rem 0
+//     }
+// }
+
+// @media screen and (min-width:64rem) {
+//     .lv-footer-navigation>ul {
+//         justify-content: space-between
+//     }
+
+//     .lv-footer-navigation>ul:lang(zh) {
+//         justify-content: flex-start
+//     }
+// }
+
+// .lv-footer-navigation>ul>li {
+//     color: currentColor;
+//     white-space: nowrap
+// }
+
+// [dir] .lv-footer-navigation>ul>li {
+//     padding: 1rem .5rem
+// }
+
+// @media screen and (min-width:48rem) {
+//     [dir=ltr] .lv-footer-navigation>ul>li {
+//         padding: .5rem 1rem .5rem 0
+//     }
+
+//     [dir=rtl] .lv-footer-navigation>ul>li {
+//         padding: .5rem 0 .5rem 1rem
+//     }
+
+//     [dir=ltr] .lv-footer-navigation>ul>li:last-child {
+//         padding-right: 0
+//     }
+
+//     [dir=rtl] .lv-footer-navigation>ul>li:last-child {
+//         padding-left: 0
+//     }
+// }
+
+// .lv-footer-navigation>ul>li.hide-on-small {
+//     display: none
+// }
+
+// @media screen and (min-width:48rem) {
+//     .lv-footer-navigation>ul>li.hide-on-small {
+//         display: block
+//     }
+// }
+
+// .lv-footer-navigation>ul>li .lv-link.-with-icon img {
+//     width: .8125rem;
+//     height: .8125rem;
+//     display: inline-block
+// }
+
+// [dir=ltr] .lv-footer-navigation>ul>li .lv-link.-with-icon img {
+//     margin-right: .188em
+// }
+
+// [dir=rtl] .lv-footer-navigation>ul>li .lv-link.-with-icon img {
+//     margin-left: .188em
+// }
+
+// .lv-footer-navigation hr {
+//     height: 1px
+// }
+
+// [dir] .lv-footer-navigation hr {
+//     background-color: #392d23;
+//     border: none;
+//     margin: 0
+// }
+
+// .lv-footer-navigation_sections {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     font-size: .75rem;
+//     letter-spacing: .025rem;
+//     line-height: 1.25rem;
+//     font-weight: 300;
+//     color: #fff
+// }
+
+// [dir] .lv-footer-navigation_sections {
+//     padding-bottom: 2rem
+// }
+
+// .lv-footer-navigation_sections:lang(ja),
+// .lv-footer-navigation_sections:lang(ko),
+// .lv-footer-navigation_sections:lang(zh) {
+//     font-size: .675rem
+// }
+
+// .lv-footer-navigation_sections:lang(ja),
+// .lv-footer-navigation_sections:lang(ko),
+// .lv-footer-navigation_sections:lang(th),
+// .lv-footer-navigation_sections:lang(zh) {
+//     letter-spacing: 0;
+//     line-height: normal;
+//     font-style: normal
+// }
+
+// .lv-footer-navigation_sections:lang(th) {
+//     word-break: break-word
+// }
+
+// .lv-footer-navigation_sections:lang(vi) {
+//     line-height: 1.3
+// }
+
+// .lv-footer-navigation_sections:lang(ko) {
+//     line-height: 2
+// }
+
+// @media screen and (min-width:48rem) {
+//     .lv-footer-navigation_sections {
+//         flex-direction: row
+//     }
+// }
+
+// [dir] .lv-footer-navigation_section {
+//     margin-bottom: 1rem
+// }
+
+// @media screen and (min-width:48rem) {
+//     .lv-footer-navigation_section {
+//         flex: 1 1 0
+//     }
+
+//     [dir] .lv-footer-navigation_section {
+//         margin-bottom: 0
+//     }
+
+//     [dir=ltr] .lv-footer-navigation_section {
+//         margin-left: 2rem
+//     }
+
+//     [dir=rtl] .lv-footer-navigation_section {
+//         margin-right: 2rem
+//     }
+
+//     [dir=ltr] .lv-footer-navigation_section:first-child {
+//         margin-left: 0
+//     }
+
+//     [dir=rtl] .lv-footer-navigation_section:first-child {
+//         margin-right: 0
+//     }
+// }
+
+// .lv-footer-navigation_section .lv-link {
+//     text-decoration: underline
+// }
+
+// .lv-footer-navigation__consumers-rights-uae {
+//     display: flex;
+//     justify-content: center
+// }
+
+// [dir] .lv-footer-navigation__consumers-rights-uae {
+//     padding-bottom: 2.5rem
+// }
+
+// @media screen and (min-width:48rem) {
+//     .lv-footer-navigation__consumers-rights-uae {
+//         justify-content: flex-start
+//     }
+// }
+
+// .lv-footer-navigation__consumers-rights-uae .lv-icon {
+//     width: 2rem;
+//     height: 2rem
+// }
+
+// .lv-footer-navigation .ship-to {
+//     align-self: center;
+//     display: inline-flex;
+//     align-items: baseline
+// }
+
+// [dir] .lv-footer-navigation .ship-to {
+//     padding: 2.5rem 0
+// }
+
+// .lv-footer-navigation .flag-with-label {
+//     display: flex;
+//     align-items: center
+// }
+
+// .lv-footer-navigation .flag-with-label .lv-flag {
+//     height: .875rem;
+//     width: 1.1875rem
+// }
+
+// [dir] .lv-footer-navigation .flag-with-label .lv-flag {
+//     margin: 0 .5rem;
+//     border: 0
+// }
+
+// @media screen and (min-width:48rem) {
+//     [dir=ltr] .lv-footer-navigation .flag-with-label .lv-flag {
+//         margin: 0 .5rem 0 0
+//     }
+
+//     [dir=rtl] .lv-footer-navigation .flag-with-label .lv-flag {
+//         margin: 0 0 0 .5rem
+//     }
+// }
+
+// .lv-footer-navigation .flag-with-label .lv-flag.-intl {
+//     position: relative;
+//     width: 1rem;
+//     height: 1rem;
+//     fill: #fff
+// }
+
+// @media screen and (min-width:48rem) {
+//     .lv-footer-navigation .show-only-on-small {
+//         display: none
+//     }
+// }
+
+// @keyframes fade-in {
+//     0% {
+//         opacity: 0
+//     }
+
+//     to {
+//         opacity: 1
+//     }
+// }
+
+// @keyframes fade-out {
+//     0% {
+//         opacity: 1
+//     }
+
+//     to {
+//         opacity: 0
+//     }
+// }
+
+// @keyframes spinner {
+//     0% {
+//         transform: rotate(-90deg);
+//         stroke-dashoffset: 132
+//     }
+
+//     50% {
+//         transform: rotate(270deg);
+//         stroke-dashoffset: 28
+//     }
+
+//     to {
+//         transform: rotate(630deg);
+//         stroke-dashoffset: 132
+//     }
+// }
+
+// [dir] .lv-footer-closable-panel {
+//     background-color: #19110b
+// }
+
+// .lv-footer-closable-panel__header {
+//     display: flex;
+//     align-items: center;
+//     position: relative
+// }
+
+// [dir] .lv-footer-closable-panel__header {
+//     padding-top: 2rem
+// }
+
+// .lv-footer-closable-panel__header .lv-icon-button {
+//     position: absolute;
+//     top: .5rem
+// }
+
+// [dir] .lv-footer-closable-panel__header .lv-icon-button {
+//     background: transparent
+// }
+
+// [dir=ltr] .lv-footer-closable-panel__header .lv-icon-button {
+//     right: -.5rem
+// }
+
+// [dir=rtl] .lv-footer-closable-panel__header .lv-icon-button {
+//     left: -.5rem
+// }
+
+// .lv-footer-closable-panel__title {
+//     flex: 1 1 auto;
+//     color: inherit;
+//     font-weight: 400
+// }
+
+// [dir] .lv-footer-closable-panel__title {
+//     margin: 0;
+//     text-align: center
+// }
+
+// @keyframes fade-in {
+//     0% {
+//         opacity: 0
+//     }
+
+//     to {
+//         opacity: 1
+//     }
+// }
+
+// @keyframes fade-out {
+//     0% {
+//         opacity: 1
+//     }
+
+//     to {
+//         opacity: 0
+//     }
+// }
+
+// @keyframes spinner {
+//     0% {
+//         transform: rotate(-90deg);
+//         stroke-dashoffset: 132
+//     }
+
+//     50% {
+//         transform: rotate(270deg);
+//         stroke-dashoffset: 28
+//     }
+
+//     to {
+//         transform: rotate(630deg);
+//         stroke-dashoffset: 132
+//     }
+// }
+
+// .lv-footer-folder-links {
+//     font-size: 1rem;
+//     letter-spacing: .025rem;
+//     line-height: 1.25rem;
+//     font-weight: 400;
+//     color: inherit
+// }
+
+// [dir] .lv-footer-folder-links {
+//     background-color: #19110b;
+//     padding: 1rem 0;
+//     text-align: center
+// }
+
+// .lv-footer-folder-links:lang(ko),
+// .lv-footer-folder-links:lang(zh) {
+//     font-size: .9rem
+// }
+
+// .lv-footer-folder-links:lang(ja) {
+//     font-size: .8rem
+// }
+
+// .lv-footer-folder-links:lang(ja),
+// .lv-footer-folder-links:lang(ko),
+// .lv-footer-folder-links:lang(th),
+// .lv-footer-folder-links:lang(zh) {
+//     letter-spacing: 0;
+//     line-height: normal;
+//     font-style: normal
+// }
+
+// .lv-footer-folder-links:lang(th) {
+//     word-break: break-word
+// }
+
+// .lv-footer-folder-links:lang(vi) {
+//     line-height: 1.3
+// }
+
+// .lv-footer-folder-links__item {
+//     line-height: 1rem;
+//     display: inline-block;
+//     width: 100%
+// }
+
+// [dir] .lv-footer-folder-links__item {
+//     margin: .5rem .5rem 1rem
+// }
+
+// .lv-footer-folder-links a {
+//     line-height: inherit
+// }
