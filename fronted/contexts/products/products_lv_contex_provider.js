@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext, createContext, useReducer, useState } from "react";
+import React, { useContext, createContext, useReducer } from "react";
 
 export const ProductsContextLV = createContext();
 
@@ -7,7 +7,7 @@ export const useProductsLV = () => useContext(ProductsContextLV);
 
 const INIT_STATE = {
   filtered_products: [],
-  products: [],
+  products: []
 };
 
 const reducer = (state, action) => {
@@ -23,8 +23,6 @@ const reducer = (state, action) => {
 
 const ProductsContextProviderLV = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
-  const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 8;
 
   const PRODUCTS_API = "http://localhost:8000/products";
 
@@ -36,35 +34,54 @@ const ProductsContextProviderLV = ({ children }) => {
       const filteredProducts = data.filter(
         (product) => product.collection === collectionName
       );
-      const totalProducts = filteredProducts.length;
-      const totalPages = Math.ceil(totalProducts / productsPerPage);
-      const startIndex = (currentPage - 1) * productsPerPage;
-      const endIndex = startIndex + productsPerPage;
-      const products = filteredProducts.slice(startIndex, endIndex);
       dispatch({
         type: "GET_FILTERED_PRODUCTS",
-        payload: products,
+        payload: filteredProducts,
       });
-      return { totalProducts, totalPages };
+      return { totalProducts: filteredProducts.length, totalPages: 1 };
     } catch (error) {
       console.error(error);
     }
   }
 
+  async function getFilteredProducts(category, collection, color) {
+    try {
+      let url = `${PRODUCTS_API}?`;
+  
+      if (category) {
+        url += `sub_category=${category}&`;
+      }
+  
+      if (collection) {
+        url += `collection=${collection}&`;
+      }
+  
+      if (color) {
+        url += `color=${color}&`;
+      }
+  
+      const { data } = await axios(url);
+  
+      dispatch({
+        type: "GET_FILTERED_PRODUCTS",
+        payload: data,
+      });
+  
+      return { totalProducts: data.length, totalPages: 1 };
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  
+
   async function getProducts(gender) {
     try {
       const { data } = await axios(`${PRODUCTS_API}?gender=${gender}`);
-      const allProducts = data.filter((product) => product.gender === gender);
-      const totalProducts = allProducts.length;
-      const totalPages = Math.ceil(totalProducts / productsPerPage);
-      const startIndex = (currentPage - 1) * productsPerPage;
-      const endIndex = startIndex + productsPerPage;
-      const products = allProducts.slice(startIndex, endIndex);
       dispatch({
         type: "GET_PRODUCTS",
-        payload: products,
+        payload: data,
       });
-      return { totalProducts, totalPages };
+      return { totalProducts: data.length, totalPages: 1 };
     } catch (error) {
       console.error(error);
     }
@@ -75,9 +92,7 @@ const ProductsContextProviderLV = ({ children }) => {
     products: state.products,
     getCollectionProducts,
     getProducts,
-    currentPage,
-    setCurrentPage,
-    productsPerPage,
+    getFilteredProducts
   };
 
   return (
