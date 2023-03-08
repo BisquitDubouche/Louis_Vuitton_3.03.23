@@ -10,17 +10,21 @@ import "../styles/details_styles/details.scss"
 import ProductsContextProvider from "@/contexts/admin/products_context_provider";
 import AuthContextProvider from "@/contexts/auth/auth_context_provider";
 import ProductsContextProviderLV from "@/contexts/products/products_lv_contex_provider";
+import { CartProvider } from "@/contexts/cartContext/cart_context_provider";
 
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
+    
       <ProductsContextProviderLV>
         <AuthContextProvider>
           <ProductsContextProvider>
+            <CartProvider>
             <Component {...pageProps} />
+            </CartProvider>
           </ProductsContextProvider>
         </AuthContextProvider>
-      </ProductsContextProviderLV>
+      </ProductsContextProviderLV>  
     </>
   );
 }

@@ -1,6 +1,6 @@
 import axios from "axios";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 
@@ -55,7 +55,6 @@ const product = ({ product }) => {
 
   return (
     <>
-      {console.log(productObj)}
       <Navbar />
       {console.log(productObj)}
       <div className="details_container">
@@ -63,17 +62,15 @@ const product = ({ product }) => {
       <img src={productObj.image} alt="" />
       </div>
       <div className="details_rightBlock">
-        <div className="details_rigthDiv">
+        <div className="details_rightDiv">
           <h2>{productObj.name}</h2>
           <br />
-          {/* <h3>{productObj.details}</h3> */}
+          <h3>price: ${productObj.price}</h3>
           <br />
-          <h3>price:${productObj.price}</h3>
-          <br />
-          <h3>size:{productObj.size}</h3>
+          <h3>size: {productObj.size}</h3>
           <br />
           <br />
-          <button className="details_button">Add to Shopping</button>
+          <button className="details_button" onClick={null}>Add to Shopping</button>
         </div>
       </div>
       </div>

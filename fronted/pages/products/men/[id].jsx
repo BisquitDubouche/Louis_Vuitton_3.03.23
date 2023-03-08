@@ -1,23 +1,12 @@
 import axios from "axios";
 import Link from "next/link";
-import { useEffect } from "react";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import { useContext } from "react";
+import { CartContext } from "@/contexts/cartContext/cart_context_provider";
 
 
 const PRODUCTS_API = "http://localhost:8000/products";
-
-// async function getCollectionProducts(collectionName) {
-//   const { data } = await axios(`${PRODUCTS_API}?collection=${collectionName}`);
-//   return data;
-// }
-
-// async function getCollectionProduct(collectionName, id) {
-//   const { data } = await axios(
-//     `${PRODUCTS_API}?collection=${collectionName}&id=${id}`
-//   );
-//   return data;
-// }
 
 async function getProducts(gender) {
   const { data } = await axios(
@@ -57,7 +46,13 @@ export const getStaticProps = async (context) => {
 
 const product = ({ product }) => {
 
+  const { addToCart } = useContext(CartContext);
+
   const productObj = product[0];
+
+  const handleAddToCart = () => {
+    addToCart(productObj);
+  };
 
   return (
     <>
@@ -81,7 +76,7 @@ const product = ({ product }) => {
           </select>
           <br />
           <br />
-          <button className="details_button">Add to Shopping</button>
+          <button className="details_button" onClick={handleAddToCart}>Add to Cart</button>
         </div>
       </div>
       </div>
