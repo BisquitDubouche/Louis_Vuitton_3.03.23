@@ -6,84 +6,77 @@ import { useEffect, useState } from "react";
 import Sidebar from "@/components/products/sidebar";
 
 const Men = () => {
-  const { getProducts, products, currentPage, setCurrentPage } =
-    useProductsLV();
+  const {
+    getProducts,
+    pag_products,
+    products,
+    getFilteredProducts,
+  } = useProductsLV();
 
-    const [sidebarOpen, setSidebarOpen] = useState(false);
-
-  const LV = "Male";
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [data, setData] = useState([]);
+  const [filteredProd, setFilteredProd] = useState([]);
 
   useEffect(() => {
-    getProducts(LV);
-  }, [currentPage]);
+    getProducts("Male");
+  }, []);
 
-  const handlePrevPage = () => {
-    setCurrentPage((prev) => prev - 1);
+  useEffect(() => {
+    if (data.length > 0) {
+      setFilteredProd(data);
+    } else {
+      setFilteredProd(pag_products);
+    }
+  }, [data, pag_products]);
+
+  const handleData = (data) => {
+    setData(data);
   };
-
-  const handleNextPage = () => {
-    setCurrentPage((prev) => prev + 1);
-  };
-
 
   const handleSidebarToggle = () => {
     setSidebarOpen(!sidebarOpen);
   };
 
-  const handleCloseSidebar = () => {
-    setSidebarOpen(false);
+  const renderProducts = () => {
+    return filteredProd.map((product) => (
+      <Link
+        href={`women/${product.id}`}
+        className="lvarchlight2collection-card"
+        key={product.id}
+      >
+        <img src={product.image} alt="error" />
+        <h3>{product.name}</h3>
+        <h3 className="lvarchlight2collection-card-price">
+          ${product.price}.00
+        </h3>
+      </Link>
+    ));
   };
 
   return (
-    <MainLayout title='LOUIS VUITTON FOR HER'>
+    <MainLayout title="LOUIS VUITTON FOR HER">
       <Navbar />
 
-      <div className='filter-container'>
+      <div className="filter-container">
         <span>For Him</span>
         <button onClick={handleSidebarToggle}>
           Filters
           <img
-            src='https://icons.veryicon.com/png/o/miscellaneous/alicloud-official-website/filter-32.png'
-            alt='error'
+            src="https://icons.veryicon.com/png/o/miscellaneous/alicloud-official-website/filter-32.png"
+            alt="error"
           />
         </button>
       </div>
-      {sidebarOpen ? <Sidebar products={products}/> : ''}
-      
-
-      <div className='lvarchlight2collection-products'>
-        {products?.map((product) => (
-          <Link
-            href={`men/${product.id}`}
-            className='lvarchlight2collection-card'
-            key={product.id}
-          >
-            <img src={product.image} alt='error' />
-            <h3>{product.name}</h3>
-            <h3 className='lvarchlight2collection-card-price'>
-              ${product.price}.00
-            </h3>
-          </Link>
-        ))}
-      </div>
-      <div className='pagination'>
-        <button disabled={currentPage === 1} onClick={handlePrevPage}>
-          Prev
-        </button>
-        <span>{currentPage}</span>
-        <button
-          disabled={
-            !products?.length ||
-            products?.length < 8 ||
-            products?.length % 8 !== 0
-          }
-          onClick={handleNextPage}
-        >
-          Next
-        </button>
-      </div>
-
- 
+      {sidebarOpen ? (
+        <Sidebar
+          isOpen={sidebarOpen}
+          handleSidebarToggle={handleSidebarToggle}
+          getFilteredProducts={getFilteredProducts}
+          products={products}
+          onData={handleData}
+        />
+      ) : null}
+      <div className="lvarchlight2collection-products">{renderProducts()}</div>
     </MainLayout>
   );
 };
