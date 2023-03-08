@@ -6,18 +6,6 @@ import Footer from "@/components/footer/Footer";
 
 const PRODUCTS_API = "http://localhost:8000/products";
 
-// async function getCollectionProducts(collectionName) {
-//   const { data } = await axios(`${PRODUCTS_API}?collection=${collectionName}`);
-//   return data;
-// }
-
-// async function getCollectionProduct(collectionName, id) {
-//   const { data } = await axios(
-//     `${PRODUCTS_API}?collection=${collectionName}&id=${id}`
-//   );
-//   return data;
-// }
-
 async function getProducts(gender) {
   const { data } = await axios(`${PRODUCTS_API}?gender=${gender}`);
   return data;

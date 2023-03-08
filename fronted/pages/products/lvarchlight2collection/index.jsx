@@ -30,17 +30,6 @@ const lvarchlight2collection = () => {
   return (
     <MainLayout title="LV Archlight 2.0 Collection">
       <Navbar />
-
-      <div className="filter-container">
-        <span>LV Archlight 2.0 Collection</span>
-        <button>
-          Filters
-          <img
-            src="https://icons.veryicon.com/png/o/miscellaneous/alicloud-official-website/filter-32.png"
-            alt="error"
-          />
-        </button>
-      </div>
       <div className="lvarchlight2collection">
         <img
           src="https://us.louisvuitton.com/images/is/image/HP_AU_ARCHLIGHT_ANNIVERSARY_DI3.jpg?wid=2048"
@@ -59,6 +48,16 @@ const lvarchlight2collection = () => {
             collection.
           </p>
         </div>
+        <div className="filter-container">
+        <span>LV Archlight 2.0 Collection</span>
+        <button>
+          Filters
+          <img
+            src="https://icons.veryicon.com/png/o/miscellaneous/alicloud-official-website/filter-32.png"
+            alt="error"
+          />
+        </button>
+      </div>
       </div>
       <div className="lvarchlight2collection-products">
         {filtered_products?.map((product) => (
