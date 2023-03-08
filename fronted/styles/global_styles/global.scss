@@ -21,4 +21,44 @@
     background-size: cover;
     background-position: center center;
 }
+
+// 404 styles start
+
+.error-nav {
+    background: white;
+    height: 60px;
+    font-size: bolder;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.083);
+}
+
+.error-link {
+    display: flex;
+    text-decoration: none;
+    color: black;
+    padding: 20px 48px 0px 50px;
+    font-weight: 900;
+}
+
+.error-image {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.error-page {
+    display: flex;
+    justify-content: center;
+}
+.error-text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 60%;
+    margin: 20px auto 50px;
+}
+.error-text>p {
+    font-weight: 200;
+}
+
+// 404 styles end
  
