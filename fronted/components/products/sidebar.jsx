@@ -1,38 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useProductsLV } from "@/contexts/products/products_lv_contex_provider";
 
 const Sidebar = ({
   isOpen,
   handleSidebarToggle,
   products,
-  getFilteredProducts,
   onData,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedCollection, setSelectedCollection] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [filteredProducts, setFilteredProducts] = useState(products);
-
-  const handleShowProducts = async () => {
-    const newFilteredProducts = await getFilteredProducts(
-      selectedCategory,
-      selectedCollection,
-      selectedColor
-    );
-
-    const searchedProducts = searchQuery
-      ? newFilteredProducts.filter((product) =>
-          product.name.toLowerCase().includes(searchQuery.toLowerCase())
-        )
-      : newFilteredProducts;
-
-    setFilteredProducts(searchedProducts);
-    onData(searchedProducts);
-  };
+  const { getFilteredProducts } = useProductsLV();
 
   const categories = [...new Set(products.map((product) => product.sub_category))];
   const collections = [...new Set(products.map((product) => product.collection))];
   const colors = [...new Set(products.map((product) => product.color))];
+
+  useEffect(() => {
+    getFilteredProducts(selectedCategory, selectedCollection, selectedColor);
+  }, [selectedCategory, selectedCollection, selectedColor]);
 
   return (
     <div className={`sidebar-filter ${isOpen ? "open" : ""}`}>
@@ -42,13 +28,6 @@ const Sidebar = ({
         </button>
       </div>
       <div className="sidebar-filter-content">
-        <input
-          type="text"
-          placeholder="Search..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-
         <select
           name='categories'
           value={selectedCategory}
@@ -87,8 +66,20 @@ const Sidebar = ({
         </select>
         <button
           onClick={() => {
-            handleShowProducts();
             handleSidebarToggle();
+            const filteredData = products.filter((product) => {
+              if (
+                (selectedCategory === "" ||
+                  product.sub_category === selectedCategory) &&
+                (selectedCollection === "" ||
+                  product.collection === selectedCollection) &&
+                (selectedColor === "" || product.color === selectedColor)
+              ) {
+                return true;
+              }
+              return false;
+            });
+            onData(filteredData);
           }}
         >
           Show Products
