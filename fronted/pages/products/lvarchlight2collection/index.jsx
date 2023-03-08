@@ -3,6 +3,7 @@ import Navbar from "@/components/navbar/Navbar";
 import Link from "next/link";
 import { useProductsLV } from "@/contexts/products/products_lv_contex_provider";
 import { useEffect } from "react";
+import Footer from "@/components/footer/Footer";
 
 const lvarchlight2collection = () => {
   const {
@@ -90,6 +91,7 @@ const lvarchlight2collection = () => {
           Next
         </button>
       </div>
+      <Footer />
     </MainLayout>
   );
 };

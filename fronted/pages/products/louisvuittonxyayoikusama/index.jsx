@@ -3,6 +3,7 @@ import Navbar from "@/components/navbar/Navbar";
 import Link from "next/link";
 import { useProductsLV } from "@/contexts/products/products_lv_contex_provider";
 import { useEffect } from "react";
+import Footer from "@/components/footer/Footer";
 
 const louisvuittonxyayoikusama = () => {
   const {
@@ -91,6 +92,7 @@ const louisvuittonxyayoikusama = () => {
           Next
         </button>
       </div>
+      <Footer />
     </MainLayout>
   );
 };
