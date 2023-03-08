@@ -41,7 +41,7 @@ const Men = () => {
   const renderProducts = () => {
     return filteredProd.map((product) => (
       <Link
-        href={`women/${product.id}`}
+        href={`men/${product.id}`}
         className="lvarchlight2collection-card"
         key={product.id}
       >

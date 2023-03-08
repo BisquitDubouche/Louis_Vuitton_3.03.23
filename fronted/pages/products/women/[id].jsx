@@ -1,6 +1,4 @@
 import axios from "axios";
-import Link from "next/link";
-import { useEffect } from "react";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 
@@ -45,7 +43,6 @@ const product = ({ product }) => {
     <>
       {console.log(productObj)}
       <Navbar />
-      {console.log(productObj)}
       <div className="details_container">
       <div className="details_leftBlock">
       <img src={productObj.image} alt="" />
@@ -54,11 +51,15 @@ const product = ({ product }) => {
         <div className="details_rigthDiv">
           <h2>{productObj.name}</h2>
           <br />
-          {/* <h3>{productObj.details}</h3> */}
           <br />
           <h3>price:${productObj.price}</h3>
           <br />
-          <h3>size:{productObj.size}</h3>
+          <select className="details_select">
+            <option>Select size</option>
+              {productObj.size.map((size) => (
+            <option key={size} value={size}>{size}</option>
+              ))}
+          </select>
           <br />
           <br />
           <button className="details_button">Add to Shopping</button>
