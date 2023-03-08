@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useProductsLV } from "@/contexts/products/products_lv_contex_provider";
 import { useEffect, useState } from "react";
 import Sidebar from "@/components/products/sidebar";
+import Footer from "@/components/footer/Footer";
 
 const Men = () => {
   const {
