@@ -1,5 +1,6 @@
 .cart_container {
     display: flex;
+    height: 2500px;
 }
 .container {
     background-color: rgba(222, 184, 135, 0.055);
@@ -24,4 +25,5 @@
 }
 .info {
     display: flex;
+    flex-direction: column;
 }
