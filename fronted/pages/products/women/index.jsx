@@ -3,6 +3,7 @@ import Navbar from "@/components/navbar/Navbar";
 import Link from "next/link";
 import { useProductsLV } from "@/contexts/products/products_lv_contex_provider";
 import { useEffect } from "react";
+import Footer from "@/components/footer/Footer";
 
 const Women = () => {
   const { getProducts, products, currentPage, setCurrentPage } =
@@ -86,6 +87,7 @@ const Women = () => {
             Next
           </button>
         </div>
+        <Footer />
     </MainLayout>
   );
 };
