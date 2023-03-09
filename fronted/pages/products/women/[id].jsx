@@ -1,10 +1,10 @@
 import axios from "axios";
-
 import Link from "next/link";
 import { useState, useEffect } from "react";
-
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import { useContext } from "react";
+import { CartContext } from "@/contexts/cartContext/cart_context_provider";
 
 const PRODUCTS_API = "http://localhost:8000/products";
 
@@ -41,7 +41,13 @@ export const getStaticProps = async (context) => {
 };
 
 const product = ({ product }) => {
+const { addToCart } = useContext(CartContext);
+
   const productObj = product[0];
+
+  const handleAddToCart = () => {
+    addToCart(productObj);
+  };
 
   return (
     <>
@@ -59,17 +65,9 @@ const product = ({ product }) => {
           <br />
           <h3>size: {productObj.size}</h3>
           <br />
-          <h3>price:${productObj.price}</h3>
-          <br />
-          <select className="details_select">
-            <option>Select size</option>
-              {productObj.size.map((size) => (
-            <option key={size} value={size}>{size}</option>
-              ))}
-          </select>
           <br />
           <br />
-          <button className="details_button" onClick={null}>Add to Shopping</button>
+          <button className="details_button" onClick={handleAddToCart}>Add to Shopping</button>
         </div>
       </div>
       </div>
