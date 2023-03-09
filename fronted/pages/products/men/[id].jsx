@@ -76,7 +76,7 @@ const product = ({ product }) => {
           </select>
           <br />
           <br />
-          <button className="details_button" onClick={handleAddToCart}>Add to Cart</button>
+          <button className="details_button" onClick={handleAddToCart}>Add to Shopping</button>
         </div>
       </div>
       </div>

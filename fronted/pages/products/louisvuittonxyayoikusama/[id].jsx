@@ -3,6 +3,8 @@ import Link from "next/link";
 import { useEffect } from "react";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import { useContext } from "react";
+import { CartContext } from "@/contexts/cartContext/cart_context_provider";
 
 
 const PRODUCTS_API = "http://localhost:8000/products";
@@ -43,7 +45,13 @@ export const getStaticProps = async (context) => {
 
 const product = ({ product }) => {
 
+  const { addToCart } = useContext(CartContext);
+
   const productObj = product[0];
+
+  const handleAddToCart = () => {
+    addToCart(productObj);
+  };
 
   return (
     <>
@@ -67,7 +75,7 @@ const product = ({ product }) => {
           </select>
           <br />
           <br />
-          <button className="details_button">Add to Shopping</button>
+          <button className="details_button" onClick={handleAddToCart}>Add to Shopping</button>
         </div>
       </div>
       </div>

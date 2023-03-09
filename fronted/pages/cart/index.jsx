@@ -50,7 +50,6 @@ const MyShopingbag = () => {
           )}
         </div>
       </div>
-      <Footer />
     </MainLayout>
   );
 };
